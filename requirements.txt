@@ -1,0 +1,6 @@
+transformers
+torch
+gradio
+python-dotenv
+accelerate
+sentencepiece
