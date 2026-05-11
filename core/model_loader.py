@@ -4,7 +4,7 @@ from transformers import pipeline
 def load_generator():
     generator = pipeline(
         "text-generation",
-        model = "gpt2"
+        model = "bigscience/bloom-560m"
     )
     
     return generator
