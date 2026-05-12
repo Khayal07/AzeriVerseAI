@@ -1,7 +1,6 @@
 def build_prompt(genre, mood, topic):
 
     prompt = f"""
-    Azərbaycan dilində yaz.
     
     Mövzu: {topic}
     
@@ -9,7 +8,7 @@ def build_prompt(genre, mood, topic):
     
     Mood: {mood}
     
-    Qısa və yaradıcı sözlər yaz:
+    Azərbaycan dilində qısa meyxana yaz:
     """
 
     return prompt
