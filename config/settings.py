@@ -6,14 +6,6 @@ load_dotenv()
 APP_NAME = os.getenv("APP_NAME")
 APP_VERSION = os.getenv("APP_VERSION")
 
-MODEL_NAME = "bigscience/bloom-560m"
+TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 
-MAX_NEW_TOKENS = 80
-
-TEMPERATURE = 0.8
-
-TOP_K = 40
-
-TOP_P = 0.90
-
-REPETITION_PENALTY = 1.2
+MODEL_NAME = "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"

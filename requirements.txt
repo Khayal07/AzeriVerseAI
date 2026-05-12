@@ -4,3 +4,4 @@ gradio
 python-dotenv
 accelerate
 sentencepiece
+openai

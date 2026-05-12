@@ -1,13 +1,18 @@
-from transformers import pipeline
+from openai import OpenAI
 
-from config.settings import MODEL_NAME
+from config.settings import (
+    TOGETHER_API_KEY
+)
 
 
 def load_generator():
     
-    generator = pipeline(
-        "text-generation",
-        model = MODEL_NAME
+    client = OpenAI(
+        
+        api_key = TOGETHER_API_KEY,
+        
+        base_url = "https://api.together.xyz/v1"
+        
     )
     
-    return generator
+    return client

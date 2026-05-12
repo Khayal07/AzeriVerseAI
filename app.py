@@ -24,11 +24,11 @@ print(dataset[:200])
 
 print("\n----------------------\n")
 
-print("Loading AI model...")
+print("Connecting to AI API...")
 
 generator = load_generator()
 
-print("Model loaded successfully!")
+print("AI API connected successfully!")
 
 genre = "meyxana"
 

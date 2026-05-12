@@ -1,14 +1,14 @@
 def build_prompt(genre, mood, topic):
 
     prompt = f"""
-    
     Mövzu: {topic}
-    
+
     Janr: {genre}
-    
-    Mood: {mood}
-    
-    Azərbaycan dilində qısa meyxana yaz:
+
+    Hiss: {mood}
+
+    Azərbaycan dilində yaradıcı və emosional meyxana yaz.
+    Qafiyəli və mənalı olsun.
     """
 
     return prompt

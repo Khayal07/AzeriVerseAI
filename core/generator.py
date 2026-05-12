@@ -2,13 +2,7 @@ from core.prompt_builder import build_prompt
 
 from utils.text_cleaner import clean_text
 
-from config.settings import (
-    MAX_NEW_TOKENS,
-    TEMPERATURE,
-    TOP_K,
-    TOP_P,
-    REPETITION_PENALTY
-)
+from config.settings import MODEL_NAME
 
 
 def generate_lyrics(generator, genre, mood, topic):
@@ -19,27 +13,34 @@ def generate_lyrics(generator, genre, mood, topic):
         topic
     )
     
-    result = generator(
+    response = generator.chat.completions.create(
         
-        prompt,
+        model = MODEL_NAME,
         
-        max_new_tokens = MAX_NEW_TOKENS,
+        messages = [
+            
+            {
+                "role": "system",
+                
+                "content": (
+                    "Sən professional Azərbaycanlı meyxana "
+                    "və şeir müəllifisən."
+                )
+            },
+            
+            {
+                "role": "user",
+                
+                "content": prompt
+            }
+        ],
         
-        do_sample = True,
+        temperature = 0.8,
         
-        temperature = TEMPERATURE,
-        
-        top_k = TOP_K,
-        
-        top_p = TOP_P,
-        
-        repetition_penalty = REPETITION_PENALTY,
-        
-        return_full_text = False
-        
+        max_tokens = 200
     )
     
-    generated_text = result[0]["generated_text"]
+    generated_text = response.choices[0].message.content
     
     cleaned_text = clean_text(generated_text)
     
