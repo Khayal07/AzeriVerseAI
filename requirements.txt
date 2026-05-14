@@ -5,3 +5,4 @@ python-dotenv
 accelerate
 sentencepiece
 openai
+groq

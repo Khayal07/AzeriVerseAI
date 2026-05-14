@@ -8,6 +8,7 @@ def build_prompt(genre, mood, topic):
     Hiss: {mood}
 
     Azərbaycan dilində yaradıcı və emosional meyxana yaz.
+
     Qafiyəli və mənalı olsun.
     """
 

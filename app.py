@@ -38,13 +38,21 @@ topic = "sevgi"
 
 print("\nGenerating lyrics...\n")
 
-lyrics = generate_lyrics(
-    generator,
-    genre,
-    mood,
-    topic
-)
+try:
 
-print("Generated Meyxana:\n")
+    lyrics = generate_lyrics(
+        generator,
+        genre,
+        mood,
+        topic
+    )
 
-print(lyrics)
+    print("Generated Meyxana:\n")
+
+    print(lyrics)
+
+except Exception as error:
+
+    print("Generation Error:")
+
+    print(error)

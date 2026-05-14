@@ -1,18 +1,12 @@
-from openai import OpenAI
+from groq import Groq
 
-from config.settings import (
-    TOGETHER_API_KEY
-)
+from config.settings import GROQ_API_KEY
 
 
 def load_generator():
     
-    client = OpenAI(
-        
-        api_key = TOGETHER_API_KEY,
-        
-        base_url = "https://api.together.xyz/v1"
-        
+    client = Groq(
+        api_key=GROQ_API_KEY
     )
     
     return client
