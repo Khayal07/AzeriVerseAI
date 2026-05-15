@@ -1,12 +1,16 @@
-from groq import Groq
+import google.generativeai as genai
 
-from config.settings import GROQ_API_KEY
+from config.settings import GEMINI_API_KEY
 
 
 def load_generator():
-
-    client = Groq(
-        api_key=GROQ_API_KEY
+    
+    genai.configure(
+        api_key=GEMINI_API_KEY
     )
-
-    return client
+    
+    model = genai.GenerativeModel(
+        "gemini-1.5-flash"
+    )
+    
+    return model

@@ -6,3 +6,4 @@ accelerate
 sentencepiece
 openai
 groq
+google-generativeai
