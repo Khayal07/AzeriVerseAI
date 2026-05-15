@@ -32,9 +32,9 @@ print("AI API connected successfully!")
 
 genre = "meyxana"
 
-mood = "dark"
+mood = "aggressive"
 
-topic = "sevgi"
+topic = "küçə həyatı"
 
 print("\nGenerating lyrics...\n")
 

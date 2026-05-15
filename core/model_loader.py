@@ -4,9 +4,9 @@ from config.settings import GROQ_API_KEY
 
 
 def load_generator():
-    
+
     client = Groq(
         api_key=GROQ_API_KEY
     )
-    
+
     return client

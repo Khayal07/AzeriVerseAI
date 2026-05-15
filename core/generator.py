@@ -15,30 +15,20 @@ def generate_lyrics(generator, genre, mood, topic):
 
     response = generator.chat.completions.create(
 
-        model=MODEL_NAME,
+    model=MODEL_NAME,
 
-        messages=[
+    messages=[
 
-            {
-                "role": "system",
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ],
 
-                "content": (
-                    "Sən professional Azərbaycanlı "
-                    "meyxana və şeir yazıçısısan."
-                )
-            },
+    temperature=1,
 
-            {
-                "role": "user",
-
-                "content": prompt
-            }
-        ],
-
-        temperature=0.8,
-
-        max_tokens=200
-    )
+    max_tokens=120
+)
 
     generated_text = response.choices[0].message.content
 
