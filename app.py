@@ -1,3 +1,5 @@
+from utils.logger import logger
+
 from core.model_loader import load_generator
 
 from core.generator import generate_lyrics
@@ -12,7 +14,7 @@ from config.settings import (
 
 print(f"{APP_NAME} v{APP_VERSION}")
 
-print("\nLoading dataset...")
+logger.info("Loading dataset...")
 
 dataset = load_dataset("data/raw/meyxana.txt")
 
@@ -24,7 +26,7 @@ print(dataset[:200])
 
 print("\n----------------------\n")
 
-print("Connecting to AI API...")
+logger.info("Connecting to AI API...")
 
 generator = load_generator()
 
@@ -36,7 +38,7 @@ mood = "aggressive"
 
 topic = "küçə həyatı"
 
-print("\nGenerating lyrics...\n")
+logger.info("Generating lyrics...")
 
 try:
 
@@ -51,8 +53,6 @@ try:
 
     print(lyrics)
 
-except Exception as error:
+except Exception as e:
 
-    print("Generation Error:")
-
-    print(error)
+    logger.error(f"Generation Error: {e}")
