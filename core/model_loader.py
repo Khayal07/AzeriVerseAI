@@ -1,19 +1,12 @@
-import google.generativeai as genai
+from google import genai
 
-from config.settings import (
-    GEMINI_API_KEY,
-    MODEL_NAME
-)
+from config.settings import GEMINI_API_KEY
 
 
 def load_generator():
 
-    genai.configure(
+    client = genai.Client(
         api_key=GEMINI_API_KEY
     )
 
-    model = genai.GenerativeModel(
-        MODEL_NAME
-    )
-
-    return model
+    return client
