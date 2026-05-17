@@ -13,14 +13,25 @@ def generate_lyrics(generator, genre, mood, topic):
         topic
     )
 
-    response = generator.models.generate_content(
+    response = generator.chat.completions.create(
 
         model=MODEL_NAME,
 
-        contents=prompt
+        messages=[
+
+            {
+                "role": "user",
+                "content": prompt
+            }
+
+        ],
+
+        temperature=0.9,
+
+        max_tokens=200
     )
 
-    generated_text = response.text
+    generated_text = response.choices[0].message.content
 
     cleaned_text = clean_text(
         generated_text
